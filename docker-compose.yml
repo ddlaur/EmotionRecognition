@@ -4,6 +4,6 @@ services:
   app-server:
     build: .
     ports:
-      - "8080:8080"
+      - "8000:8000"
     restart: always
     container_name: emotion_recognition
