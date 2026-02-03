@@ -8,9 +8,7 @@ SR = 22050
 DURATION = 2.5
 
 def extract_multimodal_features(y, sr):
-    """
-    MUST MATCH training extraction exactly.
-    """
+
     try:
         mfcc = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=20)
         chroma = librosa.feature.chroma_stft(y=y, sr=sr, n_chroma=12)
@@ -24,9 +22,6 @@ def extract_multimodal_features(y, sr):
         return None
 
 def load_resources():
-    """
-    Helper to load heavy files once.
-    """
     print("Loading resources...")
     model = load_model('emotion_recognition_model.h5')
     scaler = joblib.load('scaler.pkl')
@@ -34,10 +29,6 @@ def load_resources():
     return model, scaler, label_encoder
 
 def predict_emotion(model, scaler, label_encoder, audio_path):
-    """
-    Predicts emotion using passed resources.
-    Returns: (Emotion_String, Confidence_Score)
-    """
     try:
         y, sr = librosa.load(audio_path, sr=SR)
         
