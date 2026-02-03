@@ -1,8 +1,3 @@
-"""
-Emotion Recognition from Audio using RAVDESS Dataset
-PHASE 3: Subject-Independent Split + Multimodal Features + Augmentation
-"""
-
 import os
 import joblib
 import numpy as np
@@ -24,10 +19,6 @@ from tensorflow import keras
 from keras import layers, models, Sequential
 from keras.utils import to_categorical
 from keras.callbacks import EarlyStopping, ReduceLROnPlateau
-
-# =============================================================================
-# 1. DATA LOADING
-# =============================================================================
 
 def load_ravdess_data(data_path):
     print("Scanning files...")
@@ -69,10 +60,6 @@ def load_ravdess_data(data_path):
     df = pd.DataFrame(data)
     print(f"Found {len(df)} files.")
     return df
-
-# =============================================================================
-# 2. FEATURE EXTRACTION (MULTIMODAL)
-# =============================================================================
 
 def extract_multimodal_features(y, sr):
     """
@@ -169,10 +156,6 @@ def prepare_features_windowed(df, duration=2.5, overlap=1.0, augment=False):
             
     return np.array(X), np.array(y)
 
-# =============================================================================
-# 3. MODEL ARCHITECTURE
-# =============================================================================
-
 def build_cnn_model(input_shape, num_classes):
     model = Sequential()
     
@@ -211,10 +194,6 @@ def build_cnn_model(input_shape, num_classes):
     )
     
     return model
-
-# =============================================================================
-# 4. MAIN EXECUTION
-# =============================================================================
 
 def main():
     DATA_PATH = "RAVDESS_data/"
