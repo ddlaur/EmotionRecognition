@@ -1,0 +1,8 @@
+RAVDESS_data/
+venv/
+__pycache__/
+.git/
+.vscode/
+
+!antigravity/models/*.h5
+!antigravity/models/*.keras

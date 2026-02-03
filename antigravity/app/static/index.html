@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Emotion Recognition from Voice - Upload audio to detect emotions">
+    <title>Emotion Recognition | Antigravity</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="language-toggle">
+        <button id="btn-en" class="lang-btn active">EN</button>
+        <button id="btn-ro" class="lang-btn">RO</button>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <div class="icon-container">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                        <line x1="12" y1="19" x2="12" y2="22" />
+                    </svg>
+                </div>
+                <h1>Emotion Recognition</h1>
+                <p class="subtitle" data-i18n="subtitle">Detect emotions from your voice</p>
+            </div>
+
+            <div class="upload-section">
+                <label for="audio-input" class="upload-label" id="upload-label">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="17 8 12 3 7 8" />
+                        <line x1="12" y1="3" x2="12" y2="15" />
+                    </svg>
+                    <span id="upload-text" data-i18n="upload_text">Upload Audio</span>
+                    <span class="file-types">.wav, .mp3, .m4a</span>
+                </label>
+                <input type="file" id="audio-input" accept=".wav,.mp3,.m4a" hidden>
+            </div>
+
+            <div class="progress-section" id="progress-section">
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <span class="progress-text" id="progress-text">0%</span>
+            </div>
+
+            <div class="result-section" id="result-section">
+                <div class="result-card" id="result-card">
+                    <span class="result-label" data-i18n="result_label">Detected Emotion</span>
+                    <span class="result-emotion" id="result-emotion">-</span>
+                    <span class="result-confidence" id="result-confidence"></span>
+                </div>
+            </div>
+
+            <div class="error-section" id="error-section">
+                <div class="error-card">
+                    <svg class="error-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="8" x2="12" y2="12" />
+                        <line x1="12" y1="16" x2="12.01" y2="16" />
+                    </svg>
+                    <span class="error-message" id="error-message">An error occurred</span>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p data-i18n="footer">Created by Danila Laurentiu</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
