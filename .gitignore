@@ -6,3 +6,15 @@ __pycache__/
 
 !antigravity/models/*.h5
 !antigravity/models/*.keras
+
+*.docx
+*.doc
+*.wav
+*.txt
+!requirements.txt
+*.md
+!README.md
+*.pkl
+!antigravity/models/*.pkl
+*.h5
+!antigravity/models/*.h5
