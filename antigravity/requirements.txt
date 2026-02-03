@@ -1,7 +1,0 @@
-fastapi
-uvicorn[standard]
-python-multipart
-tensorflow
-librosa
-pydub
-numpy
